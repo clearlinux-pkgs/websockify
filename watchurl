@@ -1,0 +1,2 @@
+# openstack needs version >=0.6.0,<0.7
+watchurl=https://pypi.python.org/packages/source/w/websockify/websockify-(0.6[\d\.]*).tar.gz
