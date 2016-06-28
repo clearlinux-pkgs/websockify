@@ -4,7 +4,7 @@
 #
 Name     : websockify
 Version  : 0.7.0
-Release  : 15
+Release  : 16
 URL      : https://pypi.python.org/packages/source/w/websockify/websockify-0.7.0.tar.gz
 Source0  : https://pypi.python.org/packages/source/w/websockify/websockify-0.7.0.tar.gz
 Summary  : Websockify.
