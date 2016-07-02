@@ -1,5 +1,5 @@
 PKG_NAME := websockify
-URL := https://pypi.python.org/packages/source/w/websockify/websockify-0.7.0.tar.gz
+URL := http://pypi.debian.net/websockify/websockify-0.8.0.tar.gz
 ARCHIVES :=
 
 include ../common/Makefile.common
