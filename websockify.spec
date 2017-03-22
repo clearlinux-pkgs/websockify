@@ -4,7 +4,7 @@
 #
 Name     : websockify
 Version  : 0.8.0
-Release  : 21
+Release  : 22
 URL      : http://pypi.debian.net/websockify/websockify-0.8.0.tar.gz
 Source0  : http://pypi.debian.net/websockify/websockify-0.8.0.tar.gz
 Summary  : Websockify.
@@ -13,6 +13,7 @@ License  : LGPL-3.0
 Requires: websockify-bin
 Requires: websockify-python
 Requires: websockify-data
+Requires: numpy
 BuildRequires : numpy
 BuildRequires : pbr
 BuildRequires : pip
@@ -55,15 +56,18 @@ python components for the websockify package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484584390
+export SOURCE_DATE_EPOCH=1490215582
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1484584390
+export SOURCE_DATE_EPOCH=1490215582
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
@@ -83,4 +87,5 @@ python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
