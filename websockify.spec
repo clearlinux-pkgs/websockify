@@ -4,14 +4,13 @@
 #
 Name     : websockify
 Version  : 0.8.0
-Release  : 29
+Release  : 30
 URL      : http://pypi.debian.net/websockify/websockify-0.8.0.tar.gz
 Source0  : http://pypi.debian.net/websockify/websockify-0.8.0.tar.gz
 Summary  : Websockify.
 Group    : Development/Tools
 License  : LGPL-3.0
 Requires: websockify-bin
-Requires: websockify-legacypython
 Requires: websockify-python3
 Requires: websockify-data
 Requires: websockify-python
@@ -43,19 +42,9 @@ Group: Data
 data components for the websockify package.
 
 
-%package legacypython
-Summary: legacypython components for the websockify package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the websockify package.
-
-
 %package python
 Summary: python components for the websockify package.
 Group: Default
-Requires: websockify-legacypython
 Requires: websockify-python3
 
 %description python
@@ -79,15 +68,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507181045
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1523310590
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1507181045
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -107,10 +93,6 @@ echo ----[ mark ]----
 /usr/share/websockify/include/web-socket-js/swfobject.js
 /usr/share/websockify/include/web-socket-js/web_socket.js
 /usr/share/websockify/include/websock.js
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files python
 %defattr(-,root,root,-)
