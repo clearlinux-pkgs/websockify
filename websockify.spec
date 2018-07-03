@@ -4,7 +4,7 @@
 #
 Name     : websockify
 Version  : 0.8.0
-Release  : 37
+Release  : 38
 URL      : http://pypi.debian.net/websockify/websockify-0.8.0.tar.gz
 Source0  : http://pypi.debian.net/websockify/websockify-0.8.0.tar.gz
 Summary  : Websockify.
